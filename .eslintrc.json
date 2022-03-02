@@ -2,10 +2,9 @@
    "extends": ["airbnb", "prettier", "plugin:node/recommended"],
    "plugins": ["prettier"],
    "rules": {
-      "prettier/prettier": "error",
+      "prettier/prettier": ["error"],
       "spaced-comment": "off",
       "no-console": "warn",
-		"semi": "off",
       "consistent-return": "off",
       "func-names": "off",
       "object-shorthand": "off",
