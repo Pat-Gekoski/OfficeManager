@@ -1,0 +1,6 @@
+{
+	"checkedIn": "some date",
+	"acknowledged": "some date",
+	"ackBy": "some user",
+	"data" : "json data"
+}

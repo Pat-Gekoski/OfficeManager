@@ -1,0 +1,22 @@
+[
+	{
+		"email": "patgekoski@gmail.com",
+		"username": "Patric",
+		"password": "password"
+	},
+	{
+		"email": "chrisSmith@gmail.com",
+		"username": "Christopher Smith",
+		"password": "password"
+	},
+	{
+		"email": "valerie@protonmail.com",
+		"username": "Valerie Gekoski",
+		"password": "password"
+	},
+	{
+		"email": "jasonVoorhies@yahoo.com",
+		"username": "Jason Voorhies",
+		"password": "password"
+	}
+]
