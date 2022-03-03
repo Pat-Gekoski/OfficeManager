@@ -10,27 +10,18 @@ router
    .route('/')
    .get(
       authController.protect,
-      authController.restrictTo('systemAdmin'),
-      accountController.getAllAccounts
-   )
-
-router
-   .route('/:id')
-   .get(
-      authController.protect,
-      authController.restrictTo('systemAdmin, accountAdmin'),
+      authController.restrictTo('accountAdmin'),
       accountController.getAccount
-   ) // todo: restrict to specific admin or systemAdmin
-	
-   .patch(
+   )
+	.patch(
       authController.protect,
-      authController.restrictTo('systemAdmin, accountAdmin'),
+      authController.restrictTo('accountAdmin'),
       accountController.updateAccount
-   ) // todo: restrict to specific admin or systemAdmin
+   )
    .delete(
       authController.protect,
-      authController.restrictTo('systemAdmin, accountAdmin'),
+      authController.restrictTo('accountAdmin'),
       accountController.deleteAccount
-   ) // todo: restrict to specific admin or systemAdmin
+   ) 
 
 module.exports = router

@@ -20,7 +20,7 @@ const createSendToken = async (user, statusCode, res, account) => {
       expires: new Date(Date.now() * 24 * 60 * 60 * 1000),
       httpOnly: true,
    }
-	if (process.env.NODE_ENV === 'production') cookieOptions.secure = true
+   if (process.env.NODE_ENV === 'production') cookieOptions.secure = true
 
    res.cookie('jwt', token, cookieOptions)
 
@@ -81,9 +81,9 @@ exports.protect = catchAsync(async (req, res, next) => {
    let token
    if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
       token = req.headers.authorization.split(' ')[1]
-   } else if (req.cookies.jwt){
-		token = req.cookies.jwt
-	}
+   } else if (req.cookies.jwt) {
+      token = req.cookies.jwt
+   }
 
    if (!token) {
       return next(new AppError('You are not logged in. Log in to gain access.', 401))

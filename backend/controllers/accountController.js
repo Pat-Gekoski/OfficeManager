@@ -1,33 +1,13 @@
 const Account = require('../models/accountModel')
 const AppError = require('../utils/appError')
-const ApiFeatures = require('../utils/apiFeatures')
 const catchAsync = require('../utils/catchAsync')
-
-// restricted to systemAdmin
-exports.getAllAccounts = catchAsync(async (req, res, next) => {
-   const features = new ApiFeatures(Account.find(), req.query)
-      .filter()
-      .sort()
-      .limitFields()
-      .paginate()
-
-   const accounts = await features.query
-
-   res.status(200).json({
-      requestTime: req.requestTime,
-      status: 'success',
-      results: accounts.length,
-      data: {
-         accounts,
-      },
-   })
-})
+const allowedFields = require('../utils/allowedFields')
 
 exports.getAccount = catchAsync(async (req, res, next) => {
-   const account = await Account.findById(req.params.id)
+   const account = await Account.findById(req.user.account).where({ active: { $ne: false } })
 
    if (!account) {
-      return next(new AppError('No account found with that ID', 404))
+      return next(new AppError('There is no account associated with this user', 404))
    }
 
    res.status(200).json({
@@ -39,10 +19,11 @@ exports.getAccount = catchAsync(async (req, res, next) => {
 })
 
 exports.updateAccount = catchAsync(async (req, res, next) => {
-   const account = await Account.findByIdAndUpdate(req.params.id, req.body, {
+   const filteredBody = allowedFields(req.body, 'accountOwner', 'contactNumber')
+   const account = await Account.findByIdAndUpdate(req.user.account, filteredBody, {
       new: true,
       runValidators: true,
-   })
+   }).where({ active: { $ne: false } })
 
    if (!account) {
       return next(new AppError('No account found with that ID', 404))
@@ -57,7 +38,9 @@ exports.updateAccount = catchAsync(async (req, res, next) => {
 })
 
 exports.deleteAccount = catchAsync(async (req, res, next) => {
-   const account = await Account.findByIdAndDelete(req.params.id)
+   const account = await Account.findByIdAndUpdate(req.user.account, { active: false }).where({
+      active: { $ne: false },
+   })
 
    if (!account) {
       return next(new AppError('No account found with that ID', 404))

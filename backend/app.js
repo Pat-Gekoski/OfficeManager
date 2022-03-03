@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser')
 
 const accountsRouter = require('./routes/accountRoutes')
 const usersRouter = require('./routes/userRoutes')
+const adminRouter = require('./routes/adminRoutes')
 const AppError = require('./utils/appError')
 const globalErrorHandler = require('./controllers/errorController')
 
@@ -57,6 +58,7 @@ app.use((req, _, next) => {
 
 app.use('/api/v1/accounts', accountsRouter)
 app.use('/api/v1/users', usersRouter)
+app.use('/api/v1/admin', adminRouter)
 
 app.all('*', (req, _, next) => {
 	next(new AppError(`Can't find ${req.originalUrl} on this server`, 404))

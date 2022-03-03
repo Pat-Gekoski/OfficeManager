@@ -2,14 +2,8 @@ const User = require('../models/userModel')
 const AppError = require('../utils/appError')
 const ApiFeatures = require('../utils/apiFeatures')
 const catchAsync = require('../utils/catchAsync')
+const allowedFields = require('../utils/allowedFields')
 
-const filterObj = (obj, ...allowedFields) => {
-	const newObj = {}
-	Object.keys(obj).forEach(el => {
-		if (allowedFields.includes(el)) newObj[el] = obj[el]
-	})
-	return newObj
-}
 
 exports.getAllUsers = catchAsync(async (req, res, next) => {
    const features = new ApiFeatures(User.find(), req.query).filter().sort().limitFields().paginate()
@@ -64,7 +58,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
 		return next(new AppError('This route is not for password updates.', 400))
 	}
 
-	const filteredBody = filterObj(req.body, 'username', 'email', 'photo')
+	const filteredBody = allowedFields(req.body, 'username', 'email', 'photo')
 	const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
 		new: true,
 		runValidators: true

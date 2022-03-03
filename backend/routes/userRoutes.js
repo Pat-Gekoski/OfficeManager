@@ -22,7 +22,6 @@ router
    )
 
 // todo: restrict to account
-// prettier-ignore
 router
    .route('/:id')
    .get(

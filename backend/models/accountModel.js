@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
-const bycrypt = require('bcrypt')
 
 const accountSchema = new mongoose.Schema({
    createdAt: {
@@ -28,6 +27,7 @@ const accountSchema = new mongoose.Schema({
    contactNumber: {
       type: String,
       required: [true, 'An account must have a contact number'],
+		length: 10
    },
 	active: {
 		type: Boolean,
