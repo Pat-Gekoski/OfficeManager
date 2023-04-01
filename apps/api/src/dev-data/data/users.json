@@ -1,0 +1,38 @@
+[
+	{
+		"createdAt": "2021-06-23",
+		"email": "joesmith@stanthonys.com",
+		"username": "Joe Smith",
+		"password": "password123",
+		"passwordConfirm": "password123",
+		"role": "accountAdmin",
+		"accountId": "some ID"
+	},
+	{
+		"createdAt": "2021-10-11",
+		"email": "ben_abinales@tbmed.com",
+		"username": "Benjamin Abinales",
+		"password": "password456",
+		"passwordConfirm": "password456",
+		"role": "accountAdmin",
+		"accountId": "some ID"
+	},
+	{
+		"createdAt": "2021-03-28",
+		"email": "jackinit@gmail.com",
+		"username": "Jack Meoff",
+		"password": "password789",
+		"passwordConfirm": "password789",
+		"role": "accountAdmin",
+		"accountId": "some ID"
+	},
+	{
+		"createdAt": "2021-12-21",
+		"email": "jeremy@thestartupstreet.com",
+		"username": "Jeremy Griffin",
+		"password": "password111",
+		"passwordConfirm": "password111",
+		"role": "accountAdmin",
+		"accountId": "some ID"
+	}
+]

@@ -1,0 +1,28 @@
+{
+	"include": ["**/*.ts", "**/*.tsx"],
+	"exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"],
+	"extends": "expo/tsconfig.base",
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "commonjs",
+		"baseUrl": ".",
+		"lib": ["DOM", "esnext"],
+		"allowJs": true,
+		"jsx": "react-native",
+		"removeComments": true,
+		"noEmit": true,
+		"strict": true,
+		"noImplicitAny": false,
+		"moduleResolution": "node",
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"paths": {
+			"@common": ["./common/index.ts"],
+			"@components/*": ["./components/*"]
+		}
+	}
+}

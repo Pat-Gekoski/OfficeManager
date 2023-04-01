@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"target": "es2021",
+		"baseUrl": "src",
+		"outDir": "dist",
+		"sourceMap": true,
+		"strictNullChecks": false,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"alwaysStrict": true,
+		"pretty": true,
+		"resolveJsonModule": true,
+		"types": ["node", "jest"],
+		"typeRoots": ["./node_modules/@types", "./types", "./common"],
+		"paths": {
+			"@common": ["common"],
+			"@services": ["services"],
+			"@routes": ["routes"]
+		}
+	},
+	"include": ["./**/*.ts", "config.ts", "src/dev-data/data/import-dev-data.ts"],
+	"exclude": ["node_modules"]
+}

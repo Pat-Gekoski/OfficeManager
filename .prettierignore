@@ -1,0 +1,11 @@
+pnpm-lock.yaml
+package-lock.json
+package.json
+dist
+node_modules
+.ignore
+*.log
+*.env
+*.min.*
+apps/mobile/.expo/packager-info.json
+apps/mobile/.expo/settings.json

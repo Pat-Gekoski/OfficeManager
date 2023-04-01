@@ -1,0 +1,13 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "Local:Attach: API",
+         "request": "attach",
+         "type": "node",
+         "port": 9300,
+         "restart": true,
+         "skipFiles": ["<node_internals>/**", "node_modules/**"]
+      }
+   ]
+}

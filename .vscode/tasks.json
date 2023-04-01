@@ -1,0 +1,59 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run All Local",
+			"dependsOn": ["Local: Common", "Local: API", "Local: Admin", "Local: Mobile"],
+			"presentation": {
+				"reveal": "silent"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Local: Common",
+			"type": "npm",
+			"script": "local:common",
+			"path": ".",
+			"problemMatcher": []
+		},
+		{
+			"label": "Local: API",
+			"type": "npm",
+			"script": "local",
+			"path": "apps/api",
+			"problemMatcher": []
+		},
+		{
+			"label": "Local: Admin",
+			"type": "npm",
+			"script": "local",
+			"path": "apps/admin",
+			"problemMatcher": []
+		},
+		{
+			"label": "Local: Mobile",
+			"type": "npm",
+			"script": "start",
+			"path": "apps/mobile",
+			"problemMatcher": []
+		},
+		{
+			"label": "Terminate All Tasks",
+			"type": "shell",
+			"command": "${input:terminate-all}",
+			"presentation": {
+				"reveal": "silent",
+				"close": true
+			},
+			"problemMatcher": []
+		}
+	],
+	"inputs": [
+		{
+			"id": "terminate-all",
+			"type": "command",
+			"command": "workbench.action.tasks.terminate",
+			"args": "terminateAll"
+		}
+	]
+}

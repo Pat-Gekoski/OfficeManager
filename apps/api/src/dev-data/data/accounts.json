@@ -1,0 +1,44 @@
+[
+	{
+		"accountName": "St Anthony's Hospital",
+		"accountOwnerName": "Joe Smith",
+		"accountOwnerEmail": "eatme@yahoo.com",
+		"contactName": "Ben Dover",
+		"contactNumber": 7273546629,
+		"contactEmail": "joesmith@stanthonys.com",
+		"password": "password123",
+		"passwordConfirm": "password123",
+		"createdAt": "2021-06-23"
+	},
+	{
+		"accountName": "Tampa Bay Med",
+		"accountOwnerName": "Benjamin Abinales",
+		"accountOwnerEmail": "test-user@gmail.com",
+		"contactNumber": 7274559284,
+		"contactEmail": "ben_abinales@tbmed.com",
+		"password": "password456",
+		"passwordConfirm": "password456",
+		"createdAt": "2021-10-11"
+	},
+	{
+		"accountName": "Jack's Fun House",
+		"accountOwnerName": "Jack Meoff",
+		"accountOwnerEmail": "anotherTest@gmail.com",
+		"contactName": "Seymor Butts",
+		"contactNumber": 7276672922,
+		"contactEmail": "jackinit@gmail.com",
+		"password": "password789",
+		"passwordConfirm": "password789",
+		"createdAt": "2021-03-28"
+	},
+	{
+		"accountName": "Startup Street",
+		"accountOwnerName": "Jeremy Griffin",
+		"accountOwnerEmail": "jeremy@thestartupstreet.com",
+		"contactNumber": 7275559032,
+		"contactEmail": "jeremy@thestartupstreet.com",
+		"password": "password111",
+		"passwordConfirm": "password111",
+		"createdAt": "2021-12-21"
+	}
+]
